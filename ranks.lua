@@ -10,8 +10,8 @@ ranks.register("moderator", {
 	colour = {a = 255, r = 255, g = 83, b = 37},
 })
 
-ranks.register("ranger", {
-	prefix = "Ranger",
+ranks.register("mayor", {
+	prefix = "Mayor",
 	colour = {a = 255, r = 255, g = 132, b = 0},
 })
 
