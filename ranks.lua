@@ -10,12 +10,12 @@ ranks.register("moderator", {
 	colour = {a = 255, r = 255, g = 83, b = 37},
 })
 
-ranks.register("guardian", {
-	prefix = "Guardian",
+ranks.register("ranger", {
+	prefix = "Ranger",
 	colour = {a = 255, r = 255, g = 132, b = 0},
 })
 
-ranks.register("youtube", {
-	prefix = "YouTube",
+ranks.register("established", {
+	prefix = "Established",
 	colour = {a = 255, r = 255, g = 80, b = 71},
 })
