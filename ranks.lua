@@ -1,12 +1,12 @@
 -- ranks/ranks.lua
 
 ranks.register("admin", {
-	prefix = "Administrator",
+	prefix = "Admin",
 	colour = {a = 255, r = 30, g = 250, b = 23},
 })
 
 ranks.register("moderator", {
-	prefix = "Moderator",
+	prefix = "Mod",
 	colour = {a = 255, r = 83, g = 83, b = 255},
 })
 
@@ -16,12 +16,7 @@ ranks.register("ranger", {
 })
 
 ranks.register("established", {
-	prefix = "Established",
-	colour = {a = 255, r = 180, g = 180, b = 71},
-})
-
-ranks.register("established", {
-	prefix = "Established",
+	prefix = "Regular",
 	colour = {a = 255, r = 180, g = 180, b = 71},
 })
 
