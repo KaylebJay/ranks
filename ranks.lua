@@ -7,7 +7,7 @@ ranks.register("admin", {
 
 ranks.register("moderator", {
 	prefix = "Mod",
-	colour = {a = 255, r = 83, g = 83, b = 255},
+	colour = {a = 255, r = 83, g = 83, b = 210},
 })
 
 ranks.register("ranger", {
@@ -15,9 +15,14 @@ ranks.register("ranger", {
 	colour = {a = 255, r = 180, g = 132, b = 0},
 })
 
+ranks.register("architect", {
+	prefix = "Architect",
+	colour = {a = 255, r = 180, g = 180, b = 71},
+})
+
 ranks.register("established", {
 	prefix = "Regular",
-	colour = {a = 255, r = 180, g = 180, b = 71},
+	colour = {a = 255, r = 90, g = 180, b = 120},
 })
 
 ranks.register("o_O", {
