@@ -219,6 +219,45 @@ function ranks.remove_rank(player)
 	end
 end
 
+function ranks.babybox(str)
+	if str == "" then
+		return str
+	end
+	local result = ""
+	local char = "bž"
+	local count = 0
+	local caps = 0
+	for c in str:gmatch(".") do
+		if (c:byte() > 65) and (c:byte() < 91) then
+			caps = caps + 1
+		end
+		if char == c then
+			count = count + 1
+		else
+			if count < 4 then
+				for i = 1, count do
+					result = result .. char
+				end
+			else
+				result = result .. char .. string.format("^%d", count)
+			end
+			char = c
+			count = 1
+		end
+	end
+	if count < 4 then
+		for i = 1, count do
+			result = result .. char
+		end
+	else
+		result = result .. char .. string.format("^%d", count)
+	end
+	if 3*caps > str:len() then
+		result = result:lower()
+	end
+	return result
+end
+
 -- [function] Send prefixed message (if enabled)
 function ranks.chat_send(name, message)
 	if minetest.settings:get("ranks.prefix_chat") ~= "false" then
@@ -228,6 +267,9 @@ function ranks.chat_send(name, message)
 			if def.prefix then
 				local colour = get_colour(def.colour)
 				local prefix = minetest.colorize(colour, def.prefix)
+				if def.babybox then
+					message = ranks.babybox(message)
+				end
 				if chat3_exists then
 					chat3.send(name, message, prefix.." ", "ranks")
 				else
@@ -236,6 +278,11 @@ function ranks.chat_send(name, message)
 				end
 				return true
 			end
+		else
+			message = ranks.babybox(message)
+			minetest.chat_send_all("<"..name.."> "..message_)
+			minetest.log("action", "CHAT: ".."<"..name.."> "..message_)
+			return true
 		end
 	end
 end
