@@ -280,8 +280,8 @@ function ranks.chat_send(name, message)
 			end
 		else
 			message = ranks.babybox(message)
-			minetest.chat_send_all("<"..name.."> "..message_)
-			minetest.log("action", "CHAT: ".."<"..name.."> "..message_)
+			minetest.chat_send_all("<"..name.."> "..message)
+			minetest.log("action", "CHAT: ".."<"..name.."> "..message)
 			return true
 		end
 	end
