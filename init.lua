@@ -260,6 +260,9 @@ end
 
 -- [function] Send prefixed message (if enabled)
 function ranks.chat_send(name, message)
+	if chat_anticurse.goodness then
+		message = chat_anticurse.goodness(message)
+	end
 	if minetest.settings:get("ranks.prefix_chat") ~= "false" then
 		local rank = ranks.get_rank(name)
 		if rank then
